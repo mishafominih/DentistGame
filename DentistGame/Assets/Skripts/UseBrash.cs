@@ -43,4 +43,9 @@ public class UseBrash : MonoBehaviour
             }
         }
     }
+
+    public bool IsClean()
+    {
+        return dirts.Count == 0;
+    }
 }

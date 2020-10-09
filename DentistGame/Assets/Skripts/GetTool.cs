@@ -39,4 +39,9 @@ public class GetTool : MonoBehaviour
             btn.enabled = true;
         }
     }
+
+    public GameObject GetToolNow()
+    {
+        return realBrush;
+    }
 }
