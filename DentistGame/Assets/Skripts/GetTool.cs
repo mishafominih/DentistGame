@@ -14,7 +14,7 @@ public class GetTool : MonoBehaviour
     private BoxCollider2D btn;
     void Start()
     {
-        btnTool = GameObject.FindGameObjectWithTag("Tool");
+        btnTool = GameObject.FindGameObjectWithTag("btnTool");
         btn = GetComponentInChildren<BoxCollider2D>();
         canvas = GameObject.FindGameObjectWithTag("Canvas");
     }
@@ -23,10 +23,11 @@ public class GetTool : MonoBehaviour
     {
         if (Input.touchCount > 0 && btn.bounds.Contains(Input.GetTouch(0).position) && !touch)
         {
+            btnTool = GameObject.FindGameObjectWithTag("btnTool");
+            if (btnTool == null) return;
+            btnTool.SetActive(false);
             touch = true;
             realTool = Instantiate(Tool, canvas.transform);
-            btnTool = GameObject.FindGameObjectWithTag("btnTool");
-            btnTool.SetActive(false);
         }
         if (touch && Input.touchCount > 0)
         {
