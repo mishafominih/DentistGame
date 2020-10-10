@@ -5,43 +5,51 @@ using UnityEngine.UI;
 
 public class GetTool : MonoBehaviour
 {
-    public GameObject Brush;
+    public GameObject Tool;
 
+    private GameObject btnTool;
     private GameObject canvas;
-    private GameObject realBrush;
-    private bool click;
+    private GameObject realTool;
+    private bool touch;
     private BoxCollider2D btn;
     void Start()
     {
+        btnTool = GameObject.FindGameObjectWithTag("Tool");
         btn = GetComponentInChildren<BoxCollider2D>();
         canvas = GameObject.FindGameObjectWithTag("Canvas");
     }
 
     void Update()
     {
-        if (Input.touchCount > 0 && btn.bounds.Contains(Input.GetTouch(0).position))
+        if (Input.touchCount > 0 && btn.bounds.Contains(Input.GetTouch(0).position) && !touch)
         {
-            click = true;
-            realBrush = Instantiate(Brush, canvas.transform);
-            btn.gameObject.GetComponent<Image>().enabled = false;
-            btn.enabled = false;
+            touch = true;
+            realTool = Instantiate(Tool, canvas.transform);
+            btnTool = GameObject.FindGameObjectWithTag("btnTool");
+            btnTool.SetActive(false);
         }
-        if (click && Input.touchCount > 0)
+        if (touch && Input.touchCount > 0)
         {
-            realBrush.transform.position = Input.GetTouch(0).position;
-            realBrush.transform.position += new Vector3(0, +200);
+            realTool.transform.position = Input.GetTouch(0).position;
+            realTool.transform.position += new Vector3(0, +200);
         }
-        else
+        else if(touch)
         {
-            Destroy(realBrush);
-            click = false;
-            btn.gameObject.GetComponent<Image>().enabled = true;
-            btn.enabled = true;
+            Destroy(realTool);
+            touch = false;
+            btnTool.gameObject.SetActive(true);
         }
     }
 
     public GameObject GetToolNow()
     {
-        return realBrush;
+        return realTool;
+    }
+
+    public void SetTool(GameObject tool, GameObject btnTool)
+    {
+        Tool = tool;
+        Destroy(this.btnTool);
+        this.btnTool = Instantiate(btnTool, transform);
     }
 }
