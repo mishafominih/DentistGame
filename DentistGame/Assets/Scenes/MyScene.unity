@@ -1508,6 +1508,7 @@ MonoBehaviour:
   Tools:
   - {fileID: 4578879099361354786, guid: 8da0b6d58b21b5d4b83766729ad86f32, type: 3}
   - {fileID: 770022777502562041, guid: 7ece40dcf60fe114cac70bd6f9b5fff0, type: 3}
+  - {fileID: 6551879797003721543, guid: b0c9664d0a8b4f5448a7c060ecaa22cd, type: 3}
 --- !u!1 &1900725046
 GameObject:
   m_ObjectHideFlags: 0
