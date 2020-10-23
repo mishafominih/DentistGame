@@ -7,8 +7,8 @@ public class GetTool : MonoBehaviour
 {
     public GameObject Tool;
 
+    private Camera camera;
     private GameObject btnTool;
-    private GameObject canvas;
     private GameObject realTool;
     private bool touch;
     private BoxCollider2D btn;
@@ -16,7 +16,7 @@ public class GetTool : MonoBehaviour
     {
         btnTool = GameObject.FindGameObjectWithTag("btnTool");
         btn = GetComponentInChildren<BoxCollider2D>();
-        canvas = GameObject.FindGameObjectWithTag("Canvas");
+        camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     void Update()
@@ -27,12 +27,12 @@ public class GetTool : MonoBehaviour
             if (btnTool == null) return;
             btnTool.SetActive(false);
             touch = true;
-            realTool = Instantiate(Tool, canvas.transform);
+            realTool = Instantiate(Tool);
         }
         if (touch && Input.touchCount > 0)
         {
-            realTool.transform.position = Input.GetTouch(0).position;
-            realTool.transform.position += new Vector3(0, +200);
+            realTool.transform.position = camera.ScreenToWorldPoint(Input.GetTouch(0).position);
+            realTool.transform.position += new Vector3(0, 1, -realTool.transform.position.z);
         }
         else if(touch)
         {

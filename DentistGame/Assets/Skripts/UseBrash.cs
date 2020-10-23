@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class UseBrash : MonoBehaviour
 {
+    public GameObject Effect;
+
+    private GameObject realEffect;
     private BoxCollider2D coll;
     private List<BoxCollider2D> dirts;
     private List<Timer> timers;
     void Start()
     {
+        realEffect = Instantiate(Effect, gameObject.transform);
         coll = GetComponent<BoxCollider2D>();
         dirts = GameObject
             .FindGameObjectsWithTag("Dirt")
@@ -25,10 +29,12 @@ public class UseBrash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool isCleaning = false;
         for(int i = 0; i < dirts.Count; i++)
         {
             if (dirts[i].bounds.Intersects(coll.bounds))
             {
+                isCleaning = true;
                 if (timers[i].Check())
                 {
                     Destroy(dirts[i].gameObject);
@@ -41,6 +47,13 @@ public class UseBrash : MonoBehaviour
             {
                 timers[i].Null();
             }
+        }
+        if (isCleaning) {
+            realEffect.SetActive(true);
+        }
+        else
+        {
+            realEffect.SetActive(false);
         }
     }
 
