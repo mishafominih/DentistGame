@@ -9,6 +9,9 @@ TagManager:
   - Brash
   - Tool
   - btnTool
+  - Smell
+  - HardDirt
+  - Tooth
   layers:
   - Default
   - TransparentFX
