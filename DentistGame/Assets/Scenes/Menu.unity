@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28791c041106de441a21e69edc3fcb50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameScene: Game
+  NameScene: StartGame
 --- !u!1 &518183769
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 780350886}
   - component: {fileID: 780350885}
   - component: {fileID: 780350884}
+  - component: {fileID: 780350887}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -581,6 +582,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780350882}
   m_CullTransparentMesh: 0
+--- !u!114 &780350887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780350882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28791c041106de441a21e69edc3fcb50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameScene: Setting
 --- !u!1 &805522557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,6 +1058,7 @@ GameObject:
   - component: {fileID: 2059368866}
   - component: {fileID: 2059368865}
   - component: {fileID: 2059368864}
+  - component: {fileID: 2059368867}
   m_Layer: 5
   m_Name: button
   m_TagString: Untagged
@@ -1114,7 +1129,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 484073945}
+      - m_Target: {fileID: 0}
         m_MethodName: CreateSecene
         m_Mode: 1
         m_Arguments:
@@ -1162,3 +1177,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059368862}
   m_CullTransparentMesh: 0
+--- !u!114 &2059368867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059368862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28791c041106de441a21e69edc3fcb50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameScene: StartGame
