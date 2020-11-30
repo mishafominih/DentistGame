@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8342294654371763731}
   m_Layer: 0
   m_Name: Grush
-  m_TagString: Untagged
+  m_TagString: good
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

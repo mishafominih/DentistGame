@@ -29,6 +29,7 @@ public class UseBrash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.touchCount == 0) Destroy(gameObject);
         bool isCleaning = false;
         for(int i = 0; i < dirts.Count; i++)
         {

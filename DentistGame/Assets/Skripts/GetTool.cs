@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,16 +15,17 @@ public class GetTool : MonoBehaviour
     private BoxCollider2D btn;
     void Start()
     {
-        btnTool = GameObject.FindGameObjectWithTag("btnTool");
+        btnTool = GetComponentInChildren<LinkTool>() == null ? null : GetComponentInChildren<LinkTool>().gameObject;
         btn = GetComponentInChildren<BoxCollider2D>();
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     void Update()
     {
-        if (Input.touchCount > 0 && btn.bounds.Contains(Input.GetTouch(0).position) && !touch)
+        if (Input.touchCount > 0 &&
+            btn.bounds.Contains(Input.GetTouch(0).position) && !touch)
         {
-            btnTool = GameObject.FindGameObjectWithTag("btnTool");
+            btnTool = GetComponentInChildren<LinkTool>() == null ? null : GetComponentInChildren<LinkTool>().gameObject;
             if (btnTool == null) return;
             btnTool.SetActive(false);
             touch = true;
@@ -34,7 +36,7 @@ public class GetTool : MonoBehaviour
             realTool.transform.position = camera.ScreenToWorldPoint(Input.GetTouch(0).position);
             realTool.transform.position += new Vector3(0, 1, -realTool.transform.position.z);
         }
-        else if(touch)
+        else if (touch)
         {
             Destroy(realTool);
             touch = false;

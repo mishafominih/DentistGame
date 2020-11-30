@@ -12,6 +12,11 @@ TagManager:
   - Smell
   - HardDirt
   - Tooth
+  - good
+  - bad
+  - Interface
+  - toolsInterface
+  - btnInterface
   layers:
   - Default
   - TransparentFX

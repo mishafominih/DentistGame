@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 8702762527409855067}
   - component: {fileID: 8702762527409855070}
   - component: {fileID: 8702762527409855069}
+  - component: {fileID: 1733982828142362070}
   m_Layer: 5
   m_Name: BtnDentalFloss
   m_TagString: btnTool
@@ -149,3 +150,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1733982828142362070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702762527409855066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123451cfcbd8704997d44d555375ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tool: {fileID: 3761412544536426453, guid: 19559ae83b1994242aed36c4d6cfef95, type: 3}
+  BtnTool: {fileID: 8702762527409855066}

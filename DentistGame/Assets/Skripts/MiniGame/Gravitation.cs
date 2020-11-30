@@ -19,6 +19,7 @@ public class Gravitation : MonoBehaviour
     {
         if (player.bounds.Intersects(GetComponent<SpriteRenderer>().bounds))
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<States>().Upd(tag == "good");
             Destroy(gameObject);
         }
         transform.position = new Vector3(

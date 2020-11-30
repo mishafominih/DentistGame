@@ -84,8 +84,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2059324817305086557}
   - component: {fileID: 1265595697408154483}
+  - component: {fileID: 4593545423110423642}
   m_Layer: 5
-  m_Name: ToolToothPaste
+  m_Name: BtnToothPaste
   m_TagString: btnTool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,6 +121,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2769245879640964517}
   m_CullTransparentMesh: 0
+--- !u!114 &4593545423110423642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769245879640964517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123451cfcbd8704997d44d555375ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tool: {fileID: 4141257151399987843, guid: ebfe4989b0de8c1458e18e5407f6ba78, type: 3}
+  BtnTool: {fileID: 2769245879640964517}
 --- !u!1 &5300429980941156854
 GameObject:
   m_ObjectHideFlags: 0
