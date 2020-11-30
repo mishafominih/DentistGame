@@ -25,7 +25,7 @@ public class Spawn : MonoBehaviour
             for(int i = 0; i < count; i++)
             {
                 var posX = Random.Range(Left.x, Right.x);
-                Instantiate(Objects.OrderBy(x => Random.Range(-1, 1)).FirstOrDefault(), 
+                Instantiate(Objects.OrderBy(x => Random.Range(0, 80)).FirstOrDefault(), 
                     new Vector3(posX, transform.position.y, 0), 
                     new Quaternion());
             }

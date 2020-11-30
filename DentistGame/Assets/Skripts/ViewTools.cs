@@ -48,6 +48,7 @@ public class ViewTools : MonoBehaviour
                 var link = g.GetComponentInChildren<LinkTool>();
                 child.gameObject.GetComponent<GetTool>().SetTool(link.Tool, link.BtnTool);
             }
+            else if (child.tag == "Untagged") ;
             else
                 child.gameObject.SetActive(false);
         }

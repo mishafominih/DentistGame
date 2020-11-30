@@ -17,6 +17,7 @@ TagManager:
   - Interface
   - toolsInterface
   - btnInterface
+  - State
   layers:
   - Default
   - TransparentFX
