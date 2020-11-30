@@ -20,8 +20,15 @@ public class Money : MonoBehaviour
 
     public void ChangeCount(int d)
     {
-        File.WriteAllText("money.txt", (count + d).ToString());
+        var res = count + d;
+        if (res < 0) res = 0;
+        File.WriteAllText("money.txt", res.ToString());
         Upd();
+    }
+
+    public int GetMoney()
+    {
+        return count;
     }
 
     private void Upd()

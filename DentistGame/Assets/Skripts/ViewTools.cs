@@ -5,9 +5,11 @@ using UnityEngine;
 public class ViewTools : MonoBehaviour
 {
     private bool hide = true;
+    ManagerTools managerTools;
     // Start is called before the first frame update
     void Start()
     {
+        managerTools = GameObject.FindGameObjectWithTag("Canvas").GetComponent<ManagerTools>();
         HideBtnTool();
         Touch();
     }
@@ -38,19 +40,21 @@ public class ViewTools : MonoBehaviour
 
     public void ViewBtnTool(GameObject g)
     {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            var child = transform.GetChild(i);
-            if (child.tag == "btnInterface")
+        if (managerTools.Check(g))
+            for (int i = 0; i < transform.childCount; i++)
             {
-                child.gameObject.SetActive(true);
+                var child = transform.GetChild(i);
+                if (child.tag == "btnInterface")
+                {
+                    child.gameObject.SetActive(true);
 
-                var link = g.GetComponentInChildren<LinkTool>();
-                child.gameObject.GetComponent<GetTool>().SetTool(link.Tool, link.BtnTool);
+                    var link = g.GetComponentInChildren<LinkTool>();
+                    child.gameObject.GetComponent<GetTool>().SetTool(link.Tool, link.BtnTool);
+                }
+                else if (child.tag == "Untagged") ;
+                else if (child.tag == "State") ;
+                else
+                    child.gameObject.SetActive(false);
             }
-            else if (child.tag == "Untagged") ;
-            else
-                child.gameObject.SetActive(false);
-        }
     }
 }
