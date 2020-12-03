@@ -23,15 +23,15 @@ public class States : MonoBehaviour
 
     public void Upd(bool n)
     {
-        if (n == true)
+        if (n)
         {
             i++;
-            money.ChangeCount(2);
+            money.ChangeCount(20);
         }
         else
         {
             i--;
-            money.ChangeCount(-10);
+            money.ChangeCount(-1);
         }
 
         if (i < 0) i = 0;

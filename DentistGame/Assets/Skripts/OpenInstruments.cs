@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -6,16 +7,24 @@ using UnityEngine.UI;
 
 public class OpenInstruments : MonoBehaviour
 {
-    public int i;
-
+    public string price;
+    public string key;
     private Image sprite;
     private Text text;
     // Start is called before the first frame update
     void Start()
     {
+        WritePriceInstrument();
         text = GetComponentInChildren<Text>();
-        text.text = File.ReadAllLines("OpenInstrument.txt")[i];
+        price = PlayerPrefs.GetString(key);
+        text.text = price;
         sprite = transform.parent.GetComponent<Image>();
+    }
+
+    private void WritePriceInstrument()
+    {
+        if (!PlayerPrefs.HasKey(key))
+            PlayerPrefs.SetString(key, price);
     }
 
     // Update is called once per frame
@@ -28,6 +37,8 @@ public class OpenInstruments : MonoBehaviour
             {
                 money.ChangeCount(-int.Parse(text.text));
                 text.text = "0";
+                price = "0";
+                PlayerPrefs.SetString(key, price);
             }
         }
     }

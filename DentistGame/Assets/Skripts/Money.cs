@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Money : MonoBehaviour
 {
     public float interval = 1;
-
+    private string key = "money";
     private int count;
     private Text text;
     private Timer timer;
@@ -22,7 +22,7 @@ public class Money : MonoBehaviour
     {
         var res = count + d;
         if (res < 0) res = 0;
-        File.WriteAllText("money.txt", res.ToString());
+        PlayerPrefs.SetInt(key, res);
         Upd();
     }
 
@@ -33,7 +33,8 @@ public class Money : MonoBehaviour
 
     private void Upd()
     {
-        text.text = File.ReadAllText("money.txt");
-        count = int.Parse(text.text);
+        if (PlayerPrefs.HasKey(key))
+            count = PlayerPrefs.GetInt(key);
+        text.text = count.ToString();
     }
 }
