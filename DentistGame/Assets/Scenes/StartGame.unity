@@ -1940,6 +1940,16 @@ PrefabInstance:
       propertyPath: i
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4915429340972110153, guid: 736f1ff5724b3014e81dbaf2daae2239,
+        type: 3}
+      propertyPath: price
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915429340972110153, guid: 736f1ff5724b3014e81dbaf2daae2239,
+        type: 3}
+      propertyPath: key
+      value: Floss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736f1ff5724b3014e81dbaf2daae2239, type: 3}
 --- !u!1 &869456551
@@ -3792,6 +3802,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cost
       objectReference: {fileID: 0}
+    - target: {fileID: 4915429340972110153, guid: 736f1ff5724b3014e81dbaf2daae2239,
+        type: 3}
+      propertyPath: price
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915429340972110153, guid: 736f1ff5724b3014e81dbaf2daae2239,
+        type: 3}
+      propertyPath: key
+      value: Brash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736f1ff5724b3014e81dbaf2daae2239, type: 3}
 --- !u!224 &1885001331 stripped
@@ -4016,6 +4036,16 @@ PrefabInstance:
         type: 3}
       propertyPath: i
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915429340972110153, guid: 736f1ff5724b3014e81dbaf2daae2239,
+        type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915429340972110153, guid: 736f1ff5724b3014e81dbaf2daae2239,
+        type: 3}
+      propertyPath: key
+      value: Paste
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736f1ff5724b3014e81dbaf2daae2239, type: 3}

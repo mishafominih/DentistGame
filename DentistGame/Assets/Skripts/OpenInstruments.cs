@@ -23,7 +23,7 @@ public class OpenInstruments : MonoBehaviour
 
     private void WritePriceInstrument()
     {
-        if (!PlayerPrefs.HasKey(key))
+        if (!PlayerPrefs.HasKey(key) || price != "0")
             PlayerPrefs.SetString(key, price);
     }
 
@@ -38,7 +38,7 @@ public class OpenInstruments : MonoBehaviour
                 money.ChangeCount(-int.Parse(text.text));
                 text.text = "0";
                 price = "0";
-                PlayerPrefs.SetString(key, price);
+                //PlayerPrefs.SetString(key, price);
             }
         }
     }
