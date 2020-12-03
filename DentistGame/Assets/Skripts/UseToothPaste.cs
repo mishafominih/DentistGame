@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UseToothPaste : MonoBehaviour
@@ -22,9 +23,9 @@ public class UseToothPaste : MonoBehaviour
         {
             if (timer.Check())
             {
-                foreach(var g in GameObject.FindGameObjectsWithTag("Smell"))
+                foreach(var g in GameObject.FindGameObjectsWithTag("Smell").Where(x => x.activeSelf))
                 {
-                    Destroy(g);
+                    g.SetActive(false);
                 }
             }
         }

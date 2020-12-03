@@ -33,8 +33,10 @@ public class Emogi : MonoBehaviour
 
     int GetCountDirt(string tag)
     {
-        dirts = dirts.Where(x => x != null).ToList();
-        return dirts.Where(x => x.tag == tag).Count();
+        var tags = dirts
+            .Where(x => x.tag == tag)
+            .Where(x => x.activeSelf);
+        return tags == null ? 0 : tags.Count();
     }
 
     Sprite GetSprite(string name)

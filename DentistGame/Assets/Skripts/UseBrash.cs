@@ -17,6 +17,7 @@ public class UseBrash : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         dirts = GameObject
             .FindGameObjectsWithTag("Dirt")
+            .Where(x => x.activeSelf)
             .Select(x => x.GetComponent<BoxCollider2D>())
             .ToList();
         timers = new List<Timer>(dirts.Count);
@@ -38,7 +39,7 @@ public class UseBrash : MonoBehaviour
                 isCleaning = true;
                 if (timers[i].Check())
                 {
-                    Destroy(dirts[i].gameObject);
+                    dirts[i].gameObject.SetActive(false);
                     dirts.RemoveAt(i);
                     timers.RemoveAt(i);
                     i--;
