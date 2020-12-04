@@ -7,7 +7,6 @@ public class ManagerDirt : MonoBehaviour
     List<GameObject> dirts;
     void Start()
     {
-        //gameObject.SetActive(true);
         dirts = new List<GameObject>();
         dirts.AddRange(GameObject.FindGameObjectsWithTag("HardDirt"));
         dirts.AddRange(GameObject.FindGameObjectsWithTag("Smell"));
@@ -32,17 +31,17 @@ public class ManagerDirt : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void ActiveDirt(bool save)
+    public void ActiveDirt(bool update)
     {
         foreach (var d in dirts)
         {
-            if(!d.activeSelf)
-                d.SetActive(Random.Range(0, 3) <= 1);
-        }
-        if (save)
-        {
-            //gameObject.SetActive(false);
-            //DontDestroyOnLoad(gameObject);
+            if (!d.activeSelf)
+            {
+                var active = Random.Range(0, 3) < 2;
+                if (update)
+                    d.SetActive(active);
+                PlayerPrefs.SetInt(d.name, active ? 1 : 0);
+            }
         }
     }
 }

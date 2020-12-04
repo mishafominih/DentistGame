@@ -23,11 +23,14 @@ public class Emogi : MonoBehaviour
     void Update()
     {
         renderer.sprite = GetSprite("Happy");
-        if (GetCountDirt("HardDirt") > 0)
+        int count = GetCountDirt("HardDirt") > 0 ? 1 : 0;
+        count += GetCountDirt("Smell") > 0 ? 1 : 0;
+        count += GetCountDirt("Dirt") > 0 ? 1 : 0;
+        if (count == 1)
             renderer.sprite = GetSprite("Norm");
-        if (GetCountDirt("Smell") > 0)
+        if (count == 2)
             renderer.sprite = GetSprite("Sad1");
-        if (GetCountDirt("Dirt") > 0)
+        if (count == 3)
             renderer.sprite = GetSprite("Shok");
     }
 
