@@ -40,6 +40,7 @@ public class UseBrash : MonoBehaviour
                 if (timers[i].Check())
                 {
                     dirts[i].gameObject.SetActive(false);
+                    PlayerPrefs.SetInt(dirts[i].name, 0);
                     dirts.RemoveAt(i);
                     timers.RemoveAt(i);
                     i--;

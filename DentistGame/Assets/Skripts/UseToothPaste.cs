@@ -26,6 +26,7 @@ public class UseToothPaste : MonoBehaviour
                 foreach(var g in GameObject.FindGameObjectsWithTag("Smell").Where(x => x.activeSelf))
                 {
                     g.SetActive(false);
+                    PlayerPrefs.SetInt(g.name, 0);
                 }
             }
         }

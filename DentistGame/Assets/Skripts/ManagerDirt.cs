@@ -12,6 +12,23 @@ public class ManagerDirt : MonoBehaviour
         dirts.AddRange(GameObject.FindGameObjectsWithTag("HardDirt"));
         dirts.AddRange(GameObject.FindGameObjectsWithTag("Smell"));
         dirts.AddRange(GameObject.FindGameObjectsWithTag("Dirt"));
+        GetState();
+    }
+
+    private void GetState()
+    {
+        foreach(var e in dirts)
+        {
+            bool isAvtive;
+            if (PlayerPrefs.HasKey(e.name))
+                isAvtive = PlayerPrefs.GetInt(e.name) != 0;
+            else
+            {
+                PlayerPrefs.SetInt(e.name, 1);
+                isAvtive = true;
+            }
+            e.SetActive(isAvtive);
+        }
     }
 
     // Update is called once per frame
