@@ -360,12 +360,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc06c651d276a148b0c977106853169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Objects:
-  - {fileID: 7065966259397767716, guid: 595b98aa9b933724d939635db11cd123, type: 3}
-  - {fileID: 3801024417986508633, guid: 0e56d61a11a2da44491881824123ed58, type: 3}
-  - {fileID: 3625432571263149316, guid: 7360b3824bacec94fbb5d971552c166b, type: 3}
-  - {fileID: 2666791082388184233, guid: b86cfd390b315bf4d84f3c7f3ea0f084, type: 3}
-  - {fileID: 2250394796025903297, guid: 75f314057a881724ea138d4df7f62579, type: 3}
+  Good:
+  - {fileID: 21300000, guid: 85bc5a7977b98bf4281624ecb74f1060, type: 3}
+  - {fileID: 21300000, guid: 0354b1940c54c814d8a4312ecb5518cd, type: 3}
+  - {fileID: 21300000, guid: c89f2c9daeee1024fb11ff4f03928d5e, type: 3}
+  - {fileID: 21300000, guid: 7451b77429cc8d949b47d9b78292e40f, type: 3}
+  - {fileID: 21300000, guid: 4b8e074a011733f42a19baad67e4a1cd, type: 3}
+  - {fileID: 21300000, guid: 4108ec25661f026468ef62a63e1d3fe9, type: 3}
+  - {fileID: 21300000, guid: 98e0c3d6ef1387d409fc110d8a5cb41f, type: 3}
+  - {fileID: 21300000, guid: bbb4e2e06c9e32a4b9e96aad739c6133, type: 3}
+  - {fileID: 21300000, guid: ae27bc369e5f48445aefba89eba0394f, type: 3}
+  Bad:
+  - {fileID: 21300000, guid: 8bc14661630dab641be41da731a32379, type: 3}
+  - {fileID: 21300000, guid: 1d31c8975aeaac046bfdd54c64bd5036, type: 3}
+  - {fileID: 21300000, guid: 9763daa33f4945e4881c53b047f134c1, type: 3}
+  - {fileID: 21300000, guid: de458015af2bfb446aec53c1977872ad, type: 3}
+  - {fileID: 21300000, guid: 36eca58cae3635444aab38f97e3c0fe4, type: 3}
+  - {fileID: 21300000, guid: 0ba999a394538e147b22aef3d6f9a0e0, type: 3}
+  - {fileID: 21300000, guid: fd9b8df04e63c004d89799d05bae612a, type: 3}
+  - {fileID: 21300000, guid: 733a1df5f1f267b47b3c50b9840addce, type: 3}
+  - {fileID: 21300000, guid: e64980e08fdc68c4a81d6ae12e72957c, type: 3}
+  prefab: {fileID: 7065966259397767716, guid: 595b98aa9b933724d939635db11cd123, type: 3}
   Left: {x: -2.82, y: 4.15}
   Right: {x: 2.82, y: 4.15}
 --- !u!4 &704453314

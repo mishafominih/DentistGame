@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public List<GameObject> Objects;
+    public List<Sprite> Good;
+    public List<Sprite> Bad;
+    public GameObject prefab;
     public Vector2 Left;
     public Vector2 Right;
 
@@ -25,9 +27,12 @@ public class Spawn : MonoBehaviour
             for(int i = 0; i < count; i++)
             {
                 var posX = Random.Range(Left.x, Right.x);
-                Instantiate(Objects.OrderBy(x => Random.Range(0, 80)).FirstOrDefault(), 
-                    new Vector3(posX, transform.position.y, 0), 
-                    new Quaternion());
+                var rand = Random.Range(0, 3) < 1;
+                prefab.GetComponent<SpriteRenderer>().sprite = rand ?
+                    Good[Random.Range(0, Good.Count)] :
+                    Bad[Random.Range(0, Good.Count)];
+                prefab.tag = rand ? "good" : "bad";
+                Instantiate(prefab, new Vector3(posX, transform.position.y, 0), new Quaternion());
             }
             rate.Null();
         }
