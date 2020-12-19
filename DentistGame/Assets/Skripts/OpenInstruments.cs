@@ -9,34 +9,34 @@ public class OpenInstruments : MonoBehaviour
 {
     public string price;
     public string key;
+    protected Text text;
     private Image sprite;
-    private Text text;
     // Start is called before the first frame update
     void Start()
     {
-        WritePriceInstrument();
+        WritePrice();
         text = GetComponentInChildren<Text>();
         price = PlayerPrefs.GetString(key);
         text.text = price;
         sprite = transform.parent.GetComponent<Image>();
     }
 
-    private void WritePriceInstrument()
+    protected void WritePrice()
     {
         if (!PlayerPrefs.HasKey(key) || price != "0")
             PlayerPrefs.SetString(key, price);
     }
 
     // Update is called once per frame
-    public void Buy()
+    protected void Buy()
     {
-        if(text.text != null)
+        if(text.text != "")
         {
             var money = GameObject.FindGameObjectWithTag("State").GetComponentInChildren<Money>();
             if(money.GetMoney() > int.Parse(text.text))
             {
                 money.ChangeCount(-int.Parse(text.text));
-                text.text = "0";
+                text.text = "";
                 price = "0";
                 //PlayerPrefs.SetString(key, price);
             }
@@ -45,6 +45,6 @@ public class OpenInstruments : MonoBehaviour
 
     private void Update()
     {
-        if (text.text == "0") Destroy(gameObject);
+        if (price == "0") Destroy(gameObject);
     }
 }

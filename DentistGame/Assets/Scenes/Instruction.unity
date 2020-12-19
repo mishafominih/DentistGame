@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d2860f3434def4cb8a0d2caa4786af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 1
+  price: 100
   key: InstrBrach
   isBuy: {fileID: 21300000, guid: aa7909d6b55aef44696b953746568c33, type: 3}
   sprite: {fileID: 1652038766}
@@ -844,7 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d2860f3434def4cb8a0d2caa4786af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 1
+  price: 150
   key: InstrTooth
   isBuy: {fileID: 21300000, guid: aa7909d6b55aef44696b953746568c33, type: 3}
   sprite: {fileID: 1445540219}
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d2860f3434def4cb8a0d2caa4786af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 1
+  price: 200
   key: InstrFloss
   isBuy: {fileID: 21300000, guid: aa7909d6b55aef44696b953746568c33, type: 3}
   sprite: {fileID: 1563468577}
