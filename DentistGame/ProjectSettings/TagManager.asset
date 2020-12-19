@@ -18,6 +18,9 @@ TagManager:
   - toolsInterface
   - btnInterface
   - State
+  - BuyInstrTooth
+  - BuyInstrBrach
+  - BuyInstrFloss
   layers:
   - Default
   - TransparentFX
