@@ -12,6 +12,7 @@ public class ManagerDirt : MonoBehaviour
         dirts.AddRange(GameObject.FindGameObjectsWithTag("Smell"));
         dirts.AddRange(GameObject.FindGameObjectsWithTag("Dirt"));
         GetState();
+        ActiveDirt(true);
     }
 
     private void GetState()
@@ -30,7 +31,6 @@ public class ManagerDirt : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void ActiveDirt(bool update)
     {
         foreach (var d in dirts)
@@ -43,5 +43,6 @@ public class ManagerDirt : MonoBehaviour
                 PlayerPrefs.SetInt(d.name, active ? 1 : 0);
             }
         }
+
     }
 }
