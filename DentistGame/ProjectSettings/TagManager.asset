@@ -21,6 +21,8 @@ TagManager:
   - BuyInstrTooth
   - BuyInstrBrach
   - BuyInstrFloss
+  - Wall
+  - Fruit
   layers:
   - Default
   - TransparentFX
