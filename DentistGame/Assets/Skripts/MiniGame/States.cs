@@ -12,7 +12,7 @@ public class States : MonoBehaviour
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
-        money = GameObject.FindGameObjectWithTag("State").GetComponent<Money>();
+        money = Money.Instance;
     }
 
 

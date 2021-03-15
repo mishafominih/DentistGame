@@ -6,11 +6,18 @@ using UnityEngine.UI;
 
 public class Money : MonoBehaviour
 {
+    public static Money Instance;
     public float interval = 1;
     private string key = "money";
     private int count;
     private Text text;
     private Timer timer;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         text = GetComponentInChildren<Text>();
