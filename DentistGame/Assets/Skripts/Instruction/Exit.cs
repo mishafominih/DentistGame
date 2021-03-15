@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Exit1 : MonoBehaviour
+public class Exit : MonoBehaviour
 {
     public GameObject windows;
 
