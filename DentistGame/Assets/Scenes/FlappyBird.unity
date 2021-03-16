@@ -1113,4 +1113,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28791c041106de441a21e69edc3fcb50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameScene: StartGame
+  NameScene: MiniGame
