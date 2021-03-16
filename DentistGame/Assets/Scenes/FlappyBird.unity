@@ -804,7 +804,7 @@ MonoBehaviour:
   - {fileID: 948367429272840475, guid: 5f615c02f80fcfd448d1d7e84682a432, type: 3}
   - {fileID: 3617912357143864117, guid: 593160df1505df44e9f1d1c0a62a4495, type: 3}
   - {fileID: 1159054175944708364, guid: 2b065abde906828419209ccb7fa72465, type: 3}
-  distanse: 5
+  distanse: 3
 --- !u!4 &1827563957
 Transform:
   m_ObjectHideFlags: 0

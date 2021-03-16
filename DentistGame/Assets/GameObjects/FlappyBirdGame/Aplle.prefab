@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4870965462170562661}
-  - component: {fileID: 387284336656007739}
+  - component: {fileID: 5846108564355102324}
   m_Layer: 0
   m_Name: Aplle
   m_TagString: Fruit
@@ -32,8 +32,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &387284336656007739
-BoxCollider2D:
+--- !u!60 &5846108564355102324
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -45,19 +45,30 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.010166794}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.71, y: 1.77}
-    newSize: {x: 1.71, y: 1.77}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8588762, y: 0.8342485}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.30431914, y: 0.3014145}
+      - {x: 0.0005478859, y: 0.38261783}
+      - {x: -0.26259738, y: 0.30901697}
+      - {x: -0.38613403, y: 0.21499419}
+      - {x: -0.4370191, y: 0.057908177}
+      - {x: -0.33936357, y: -0.22415194}
+      - {x: -0.11633581, y: -0.43726775}
+      - {x: 0.099545956, y: -0.43667275}
+      - {x: 0.15874565, y: -0.40982515}
+      - {x: 0.3665297, y: -0.18054256}
+      - {x: 0.43648434, y: 0.01685369}
+      - {x: 0.4072733, y: 0.14934051}
 --- !u!1 &7229719159144953411
 GameObject:
   m_ObjectHideFlags: 0
