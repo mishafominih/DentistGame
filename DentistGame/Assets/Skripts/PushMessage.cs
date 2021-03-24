@@ -9,21 +9,32 @@ public class PushMessage : MonoBehaviour
     public int dHour;
     public int firstHour;
     public int secondHour;
-    public int firstMinute;
-    public int secondMinute;
+
+    private string idChannal;
 
     // Start is called before the first frame update
     void Start()
     {
+        idChannal = "id_channal";
         InitializeChannal();
-        CrerateMessage();
+        CreateMessageForChannal(firstHour);
+        if(IsNeedDeletePushMassage(DateTime.Now.Hour, firstHour))
+            DeleteMassage(GetIdMassage(firstHour, DateTime.Now));
+
+        if (IsNeedDeletePushMassage(DateTime.Now.Hour, secondHour))
+            DeleteMassage(GetIdMassage(secondHour, DateTime.Now));
+    }
+
+    private void DeleteMassage(int idMassage)
+    {
+        AndroidNotificationCenter.CancelNotification(idMassage);
     }
 
     private void InitializeChannal()
     {
         var channal = new AndroidNotificationChannel()
         {
-            Id = "channal_id",
+            Id = idChannal,
             Name = "Default channal",
             Importance = Importance.High,
             Description = "Generic notifications"
@@ -31,45 +42,25 @@ public class PushMessage : MonoBehaviour
         AndroidNotificationCenter.RegisterNotificationChannel(channal);
     }
 
-    private void CrerateMessage()
+    private void CreateMessageForChannal(int hour)
     {
-        // var time = Math.Min(DateTime.Now.Hour - firstTime.Hour, DateTime.Now.Hour - secondTime.Hour);
-        //if (DateTime.Now.Hour + dHour >= firstHour || DateTime.Now.Hour + dHour >= secondHour)
-        //{
-            var notification = new AndroidNotification();
-            notification.Title = "Зубы чисть, а то выбью)";
-            notification.Text = "Что смотришь? Иди чисть зубы, а то выпадут к 30 годам.";
-            notification.FireTime = GoodTimeForMessage();
-            AndroidNotificationCenter.SendNotification(notification, "channal_id");
-        //}
+        var dateForMassege = DateTime.Now.AddDays(1);
+        var notification = new AndroidNotification
+        {
+            FireTime = new DateTime(dateForMassege.Year, dateForMassege.Month, dateForMassege.Day, hour, 0, 0),
+            Title = "Чистим зубы",
+            Text = "Пора чистить зубы!!"
+        };
+        AndroidNotificationCenter.SendNotificationWithExplicitID(notification, idChannal, GetIdMassage(hour, dateForMassege));
     }
 
-    private DateTime GoodTimeForMessage()
+    private int GetIdMassage(int hour, DateTime dateForMassage)
     {
-        var now = DateTime.Now;
-        var hourForMorningMessage = firstHour - DateTime.Now.Hour;
-        var hourForNightMessage = secondHour - DateTime.Now.Hour;
-        if (now.Hour > firstHour)
-        {
-            if (now.Hour > secondHour)
-            {
-                return now.AddDays(1).AddHours(24 - now.Hour + firstHour);
-            }
-            else
-            {
-                return now.AddHours(hourForNightMessage);
-            }
-        }
-        else
-        {
-            return now.AddHours(hourForMorningMessage);
-        }
-
+        return int.Parse(hour.ToString() + dateForMassage.Day.ToString() + dateForMassage.Year.ToString());
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool IsNeedDeletePushMassage(int nowHour, int hourForCleaning)
     {
-        
+        return nowHour < hourForCleaning && nowHour + dHour >= hourForCleaning;
     }
 }
