@@ -16,7 +16,8 @@ public class PlayerCollision : MonoBehaviour
         {
             StartCoroutine(Coroutine());
             GetComponentInChildren<SpriteRenderer>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<PolygonCollider2D>().enabled = false;
+            Points.Instance.CheckResult();
         }
         if (collision.tag == "Fruit")
         {

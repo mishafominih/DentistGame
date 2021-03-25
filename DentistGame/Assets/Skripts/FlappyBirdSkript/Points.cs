@@ -7,7 +7,10 @@ public class Points : MonoBehaviour
 {
     public static Points Instance;
 
+    public int points { get; private set; }
     private Text text;
+    private const string MAX_POINTS = "MaxPoints";
+    private string startText;
     void Awake()
     {
         Instance = this;
@@ -16,14 +19,28 @@ public class Points : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text = GetComponent<Text>();
+        points = 0;
+        text = GetComponent<Text>(); 
+        startText = text.text.Split(' ')[0];
+        SetText();
     }
 
     public void AddPoint()
     {
-        var strs = text.text.Split(' ');
-        var points = int.Parse(strs[1]);
         points++;
-        text.text = strs[0] + ' ' + points.ToString();
+        SetText();
+    }
+
+    private void SetText()
+    {
+        text.text = startText + ' ' + points.ToString() + " | " + PlayerPrefs.GetInt(MAX_POINTS);
+    }
+
+    public void CheckResult()
+    {
+        if (points > PlayerPrefs.GetInt(MAX_POINTS))
+        {
+            PlayerPrefs.SetInt(MAX_POINTS, points);
+        }
     }
 }
