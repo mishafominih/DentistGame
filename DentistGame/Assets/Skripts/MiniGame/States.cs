@@ -37,4 +37,12 @@ public class States : MonoBehaviour
         if (i < 0) i = 0;
         if (i > 4) i = 4;
     }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Upd(collision.tag == "good");
+        Destroy(collision.gameObject);
+    }
 }

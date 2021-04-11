@@ -26,7 +26,7 @@ public class UseDentallFlos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount == 0) Destroy(gameObject);
+        //if (Input.touchCount == 0) Destroy(gameObject);
         for (int i = 0; i < dirts.Count; i++)
         {
             if (dirts[i].bounds.Intersects(coll.bounds))

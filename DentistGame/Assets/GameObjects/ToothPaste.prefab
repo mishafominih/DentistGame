@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8088540097387078340}
   - component: {fileID: 1175121376436448930}
   - component: {fileID: 1546285235962944215}
+  - component: {fileID: 6324998561295120859}
   m_Layer: 0
   m_Name: ToothPaste
   m_TagString: Untagged
@@ -122,6 +123,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6ac6bc92aee6b4f8f0d142e1326c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6324998561295120859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141257151399987843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22a6beeb942cc94289444e1ce2c2298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerAlive: 1
 --- !u!1 &8061913997510901701
 GameObject:
   m_ObjectHideFlags: 0

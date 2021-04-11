@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public List<Sprite> Good;
-    public List<Sprite> Bad;
-    public GameObject prefab;
-    public Vector2 Left;
-    public Vector2 Right;
+    public List<GameObject> prefabs;
 
+    private List<Vector3> PointsForSpawn = new List<Vector3>();
     private Timer rate;
     // Start is called before the first frame update
     void Start()
     {
-        rate = new Timer(2f);
+        rate = new Timer(3f);
+        for (int i = 0; i < transform.childCount; i++)
+            PointsForSpawn.Add(transform.GetChild(i).position);
     }
 
     // Update is called once per frame
@@ -23,16 +22,16 @@ public class Spawn : MonoBehaviour
     {
         if (rate.Check())
         {
-            var count = Random.Range(1, 3);
-            for(int i = 0; i < count; i++)
+            var countElements = Random.Range(1, 3);
+            for(int i = 0; i < countElements; i++)
             {
-                var posX = Random.Range(Left.x, Right.x);
-                var rand = Random.Range(0, 3) < 1;
-                prefab.GetComponent<SpriteRenderer>().sprite = rand ?
-                    Good[Random.Range(0, Good.Count)] :
-                    Bad[Random.Range(0, Good.Count)];
-                prefab.tag = rand ? "good" : "bad";
-                Instantiate(prefab, new Vector3(posX, transform.position.y, 0), new Quaternion());
+                var indexPos = Random.Range(0, PointsForSpawn.Count);
+                var position = PointsForSpawn[indexPos];
+
+                var indexPrefab = Random.Range(0, prefabs.Count);
+                var prefab = prefabs[indexPrefab];
+
+                Instantiate(prefab, position, new Quaternion());
             }
             rate.Null();
         }

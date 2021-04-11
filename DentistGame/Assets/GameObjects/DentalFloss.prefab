@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8903942712860494848}
   - component: {fileID: 7138421877463224027}
   - component: {fileID: 2068572405665757821}
+  - component: {fileID: 6068843959472745170}
   m_Layer: 0
   m_Name: DentalFloss
   m_TagString: Untagged
@@ -122,6 +123,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d650be5cf35ee7429ef8bad7481b984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6068843959472745170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761412544536426453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22a6beeb942cc94289444e1ce2c2298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerAlive: 1
 --- !u!1 &4797335459476735149
 GameObject:
   m_ObjectHideFlags: 0
