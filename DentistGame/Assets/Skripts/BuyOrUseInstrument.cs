@@ -7,6 +7,7 @@ public class BuyOrUseInstrument : MonoBehaviour
 {
     public GameObject Instrument;
     public string key;
+    public AudioClip music;
     void Start()
     {
         UpdateText();
@@ -20,6 +21,7 @@ public class BuyOrUseInstrument : MonoBehaviour
                 if (money.GetMoney() >= cost)
                 {
                     money.ChangeCount(-cost);
+                    PlayMusic();
                     //PlayerPrefs.SetString(key, price);
                     Destroy(transform.GetChild(0).gameObject);
                 }
@@ -29,6 +31,12 @@ public class BuyOrUseInstrument : MonoBehaviour
                 Instantiate(Instrument);
             }
         });
+    }
+
+    private void PlayMusic()
+    {
+        var audio = GameObject.FindWithTag("AudioEffects").GetComponent<AudioSource>();
+        Music.PlayMusic(audio, music);
     }
 
     private void UpdateCast()

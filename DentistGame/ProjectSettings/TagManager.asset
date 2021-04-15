@@ -23,6 +23,7 @@ TagManager:
   - BuyInstrFloss
   - Wall
   - Fruit
+  - AudioEffects
   layers:
   - Default
   - TransparentFX
