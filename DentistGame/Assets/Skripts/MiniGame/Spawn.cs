@@ -12,7 +12,7 @@ public class Spawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rate = new Timer(3f);
+        rate = new Timer(0f);
         for (int i = 0; i < transform.childCount; i++)
             PointsForSpawn.Add(transform.GetChild(i).position);
     }
