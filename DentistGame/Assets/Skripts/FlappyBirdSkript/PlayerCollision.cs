@@ -34,11 +34,6 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    private void PlayMusic(AudioClip goodFood)
-    {
-
-    }
-
     private IEnumerator Coroutine()
     {
         yield return new WaitForSeconds(2.5f);

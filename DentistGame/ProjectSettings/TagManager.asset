@@ -24,6 +24,7 @@ TagManager:
   - Wall
   - Fruit
   - AudioEffects
+  - AudioMusic
   layers:
   - Default
   - TransparentFX
