@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,9 +9,13 @@ public class Points : MonoBehaviour
     public static Points Instance;
 
     public int points { get; private set; }
+    public AudioClip music;
     private Text text;
     private const string MAX_POINTS = "MaxPoints";
     private string startText;
+    private bool newRecord = false;
+    private int record;
+
     void Awake()
     {
         Instance = this;
@@ -20,6 +25,7 @@ public class Points : MonoBehaviour
     void Start()
     {
         points = 0;
+        record = PlayerPrefs.GetInt(MAX_POINTS);
         text = GetComponent<Text>(); 
         startText = text.text.Split(' ')[0];
         SetText();
@@ -33,12 +39,23 @@ public class Points : MonoBehaviour
 
     private void SetText()
     {
-        text.text = startText + ' ' + points.ToString() + " | " + PlayerPrefs.GetInt(MAX_POINTS);
+        if (points > record && !newRecord)
+        {
+            newRecord = true;
+            PlayMusic();
+        }
+        text.text = startText + ' ' + points.ToString() + " | " + record.ToString();
+    }
+
+    private void PlayMusic()
+    {
+        var audio = GameObject.FindWithTag("AudioEffects").GetComponent<AudioSource>();
+        Music.PlayMusic(audio, music);
     }
 
     public void CheckResult()
     {
-        if (points > PlayerPrefs.GetInt(MAX_POINTS))
+        if (points > record)
         {
             PlayerPrefs.SetInt(MAX_POINTS, points);
         }

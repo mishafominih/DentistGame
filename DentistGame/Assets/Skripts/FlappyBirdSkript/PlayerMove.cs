@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip flip;
+
     public float Interval = 0.5f;
     public float Force = 25;
     public float AngleUp = -60;
@@ -28,6 +31,7 @@ public class PlayerMove : MonoBehaviour
         {
             if (timer >= Interval)
             {
+                Music.PlayMusic(audioSource, flip);
                 timer = 0;
                 rb.velocity = new Vector2(0, 0);
                 rb.AddForce(new Vector2(0, Force));

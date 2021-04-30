@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class OpenInstruments : MonoBehaviour
 {
+    public AudioClip music;
     public string price;
     public string key;
     protected Text text;
@@ -35,12 +36,19 @@ public class OpenInstruments : MonoBehaviour
             var money = GameObject.FindGameObjectWithTag("State").GetComponentInChildren<Money>();
             if(money.GetMoney() > int.Parse(text.text))
             {
+                PlayMusic();
                 money.ChangeCount(-int.Parse(text.text));
                 text.text = "";
                 price = "0";
                 //PlayerPrefs.SetString(key, price);
             }
         }
+    }
+
+    private void PlayMusic()
+    {
+        var audio = GameObject.FindWithTag("AudioEffects").GetComponent<AudioSource>();
+        Music.PlayMusic(audio, music);
     }
 
     private void Update()

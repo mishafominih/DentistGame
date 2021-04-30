@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class States : MonoBehaviour
 {
     public List<Sprite>states;
+    public AudioSource audioSource;
+    public AudioClip goddFood;
+    public AudioClip badFood;
 
     private Money money;
     private int i = 2;
@@ -25,11 +29,13 @@ public class States : MonoBehaviour
     {
         if (n)
         {
+            Music.PlayMusic(audioSource, goddFood);
             i++;
             money.ChangeCount(20);
         }
         else
         {
+            Music.PlayMusic(audioSource, badFood);
             i--;
             money.ChangeCount(-1);
         }
@@ -37,8 +43,6 @@ public class States : MonoBehaviour
         if (i < 0) i = 0;
         if (i > 4) i = 4;
     }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

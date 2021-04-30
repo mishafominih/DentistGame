@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameScene: CatchTheBest
+  music: {fileID: 8300000, guid: bda11aa6ca375964eafa256e543fd812, type: 3}
 --- !u!114 &48032831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,6 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameScene: StartGame
+  music: {fileID: 8300000, guid: bda11aa6ca375964eafa256e543fd812, type: 3}
 --- !u!114 &1244543317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,6 +907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameScene: FlappyBird
+  music: {fileID: 8300000, guid: bda11aa6ca375964eafa256e543fd812, type: 3}
 --- !u!114 &1369018082
 MonoBehaviour:
   m_ObjectHideFlags: 0
