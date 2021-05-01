@@ -6,7 +6,6 @@ using UnityEngine;
 public class States : MonoBehaviour
 {
     public List<Sprite>states;
-    public AudioSource audioSource;
     public AudioClip goddFood;
     public AudioClip badFood;
 
@@ -29,13 +28,13 @@ public class States : MonoBehaviour
     {
         if (n)
         {
-            Music.PlayMusic(audioSource, goddFood);
+            Music.PlayMusic(goddFood);
             i++;
             money.ChangeCount(20);
         }
         else
         {
-            Music.PlayMusic(audioSource, badFood);
+            Music.PlayMusic(badFood);
             i--;
             money.ChangeCount(-1);
         }

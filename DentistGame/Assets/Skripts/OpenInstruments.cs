@@ -48,7 +48,7 @@ public class OpenInstruments : MonoBehaviour
     private void PlayMusic()
     {
         var audio = GameObject.FindWithTag("AudioEffects").GetComponent<AudioSource>();
-        Music.PlayMusic(audio, music);
+        Music.PlayMusic(music);
     }
 
     private void Update()

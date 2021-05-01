@@ -318,7 +318,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 1
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -414,6 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108a5af4dc2e21b43a3ae5776c54abeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: AudioMusic
 --- !u!1 &484073943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2054931892}
   - component: {fileID: 2054931891}
+  - component: {fileID: 2054931893}
   m_Layer: 0
   m_Name: Effects
   m_TagString: AudioEffects
@@ -1275,7 +1277,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -8005807160722510835, guid: 192b94a002d25cf4eb4f6f4401425d53,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1374,6 +1376,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2054931893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054931890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769766daa4df24c448429218f856eab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tag: AudioEffects
 --- !u!1 &2059368862
 GameObject:
   m_ObjectHideFlags: 0

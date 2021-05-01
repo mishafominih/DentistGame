@@ -6,6 +6,7 @@ using UnityEngine;
 public class UseBrash : MonoBehaviour
 {
     public GameObject Effect;
+    public AudioClip cleaning;
 
     private GameObject realEffect;
     private BoxCollider2D coll;
@@ -37,6 +38,7 @@ public class UseBrash : MonoBehaviour
             if (dirts[i].bounds.Intersects(coll.bounds))
             {
                 isCleaning = true;
+                Music.PlayCleaningMusic(cleaning);
                 if (timers[i].Check())
                 {
                     dirts[i].gameObject.SetActive(false);

@@ -8,18 +8,16 @@ public class PlayerCollision : MonoBehaviour
 {
     public AudioClip goodFood;
     public AudioClip endGame;
-    public AudioSource audioSource;
 
     private void Start()
     {
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Wall")
         {
-            Music.PlayMusic(audioSource, endGame);
+            Music.PlayMusic(endGame);
             StartCoroutine(Coroutine());
             GetComponentInChildren<SpriteRenderer>().enabled = false;
             GetComponent<PolygonCollider2D>().enabled = false;
@@ -27,7 +25,7 @@ public class PlayerCollision : MonoBehaviour
         }
         if (collision.tag == "Fruit")
         {
-            Music.PlayMusic(audioSource, goodFood);
+            Music.PlayMusic(goodFood);
             Points.Instance.AddPoint();
             Money.Instance.ChangeCount(25);
             Destroy(collision.gameObject);

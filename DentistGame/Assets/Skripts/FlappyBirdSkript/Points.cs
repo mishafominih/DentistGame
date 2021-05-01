@@ -50,7 +50,7 @@ public class Points : MonoBehaviour
     private void PlayMusic()
     {
         var audio = GameObject.FindWithTag("AudioEffects").GetComponent<AudioSource>();
-        Music.PlayMusic(audio, music);
+        Music.PlayMusic(music);
     }
 
     public void CheckResult()
