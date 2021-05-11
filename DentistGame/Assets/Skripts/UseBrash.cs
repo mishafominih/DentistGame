@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class UseBrash : MonoBehaviour
 {
     public GameObject Effect;
     public AudioClip cleaning;
+    public int salary;
 
     private GameObject realEffect;
     private BoxCollider2D coll;
@@ -46,6 +48,7 @@ public class UseBrash : MonoBehaviour
                     dirts.RemoveAt(i);
                     timers.RemoveAt(i);
                     i--;
+                    Work();
                 }
             }
             else
@@ -60,6 +63,13 @@ public class UseBrash : MonoBehaviour
         {
             realEffect.SetActive(false);
         }
+    }
+
+    private void Work()
+    {
+        var money = Money.Instance;
+        var coefficient = PlayerPrefs.HasKey("moneyCoefficient") ? PlayerPrefs.GetInt("moneyCoefficient") : 1;
+        money.ChangeCount(salary * coefficient);
     }
 
     public bool IsClean()

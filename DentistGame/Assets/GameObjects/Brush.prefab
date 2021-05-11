@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Effect: {fileID: 8698429903073978011, guid: 72a0dfa9004ddeb4e8e4fe23b2db849b, type: 3}
   cleaning: {fileID: 8300000, guid: c1e96626deb6a5a4fa470f22fd275a14, type: 3}
+  salary: 5
 --- !u!61 &7195204390826436867
 BoxCollider2D:
   m_ObjectHideFlags: 0

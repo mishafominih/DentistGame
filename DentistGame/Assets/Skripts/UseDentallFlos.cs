@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class UseDentallFlos : MonoBehaviour
 {
+    public int salary;
+
     private BoxCollider2D coll;
     private List<BoxCollider2D> dirts;
     private List<Timer> timers;
@@ -35,11 +37,19 @@ public class UseDentallFlos : MonoBehaviour
                 {
                     dirts[i].gameObject.SetActive(false);
                     PlayerPrefs.SetInt(dirts[i].name, 0);
+                    Work();
                     dirts.RemoveAt(i);
                     timers.RemoveAt(i);
                     i--;
                 }
             }
         }
+    }
+
+    private void Work()
+    {
+        var money = Money.Instance;
+        var coefficient = PlayerPrefs.HasKey("moneyCoefficient") ? PlayerPrefs.GetInt("moneyCoefficient") : 1;
+        money.ChangeCount(salary * coefficient);
     }
 }

@@ -8,6 +8,7 @@ public class States : MonoBehaviour
     public List<Sprite>states;
     public AudioClip goddFood;
     public AudioClip badFood;
+    public int salary;
 
     private Money money;
     private int i = 2;
@@ -30,13 +31,13 @@ public class States : MonoBehaviour
         {
             Music.PlayMusic(goddFood);
             i++;
-            money.ChangeCount(20);
+            money.ChangeCount(salary);
         }
         else
         {
             Music.PlayMusic(badFood);
             i--;
-            money.ChangeCount(-1);
+            money.ChangeCount(-salary);
         }
 
         if (i < 0) i = 0;

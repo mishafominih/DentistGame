@@ -40,9 +40,21 @@ public class OpenInstruments : MonoBehaviour
                 money.ChangeCount(-int.Parse(text.text));
                 text.text = "";
                 price = "0";
-                //PlayerPrefs.SetString(key, price);
+                PlayerPrefs.SetString(key, price);
+                UpdateCoefficient();
             }
         }
+    }
+
+    public static void UpdateCoefficient()
+    {
+        var coefficient = 1;
+        if (PlayerPrefs.HasKey("moneyCoefficient"))
+        {
+            coefficient = PlayerPrefs.GetInt("moneyCoefficient") + 1;
+            coefficient = coefficient > 6 ? 1 : coefficient;
+        }
+        PlayerPrefs.SetInt("moneyCoefficient", coefficient);
     }
 
     private void PlayMusic()

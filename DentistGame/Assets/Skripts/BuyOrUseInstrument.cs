@@ -24,6 +24,7 @@ public class BuyOrUseInstrument : MonoBehaviour
                     Music.PlayMusic(music);
                     //PlayerPrefs.SetString(key, price);
                     Destroy(transform.GetChild(0).gameObject);
+                    OpenInstruments.UpdateCoefficient();
                 }
             }
             else

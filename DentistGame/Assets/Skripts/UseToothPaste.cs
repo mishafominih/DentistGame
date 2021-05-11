@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class UseToothPaste : MonoBehaviour
 {
+    public int salary;
+
     SpriteRenderer tooth;
     BoxCollider2D coll;
     Timer timer;
@@ -26,9 +29,17 @@ public class UseToothPaste : MonoBehaviour
                 foreach(var g in GameObject.FindGameObjectsWithTag("Smell").Where(x => x.activeSelf))
                 {
                     g.SetActive(false);
+                    Work();
                     PlayerPrefs.SetInt(g.name, 0);
                 }
             }
         }
+    }
+    
+    private void Work()
+    {
+        var money = Money.Instance;
+        var coefficient = PlayerPrefs.HasKey("moneyCoefficient") ? PlayerPrefs.GetInt("moneyCoefficient") : 1;
+        money.ChangeCount(salary * coefficient);
     }
 }

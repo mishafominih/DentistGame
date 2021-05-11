@@ -980,6 +980,11 @@ PrefabInstance:
       propertyPath: goodFood
       value: 
       objectReference: {fileID: 8300000, guid: 956a651213674a1459ed09b83bef6ea2, type: 3}
+    - target: {fileID: 5710691709153862321, guid: 14fc3223b2459d94cba43cbb9d42660e,
+        type: 3}
+      propertyPath: salary
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6108333406282204804, guid: 14fc3223b2459d94cba43cbb9d42660e,
         type: 3}
       propertyPath: m_Name

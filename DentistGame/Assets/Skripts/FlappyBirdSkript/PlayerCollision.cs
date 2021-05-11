@@ -8,6 +8,7 @@ public class PlayerCollision : MonoBehaviour
 {
     public AudioClip goodFood;
     public AudioClip endGame;
+    public int salary;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Music.PlayMusic(goodFood);
             Points.Instance.AddPoint();
-            Money.Instance.ChangeCount(25);
+            Money.Instance.ChangeCount(salary);
             Destroy(collision.gameObject);
         }
     }
