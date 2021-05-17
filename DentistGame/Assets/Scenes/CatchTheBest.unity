@@ -391,6 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc06c651d276a148b0c977106853169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagBadFood: HelpForBadAndGoodFood
   prefabs:
   - {fileID: 7065966259397767716, guid: 595b98aa9b933724d939635db11cd123, type: 3}
   - {fileID: 4986082976414841002, guid: 7850c2dbd1bce104681d3b4402acb608, type: 3}
@@ -410,6 +411,7 @@ MonoBehaviour:
   - {fileID: 7634247014089076469, guid: 19476c5ace3a2c64bb7f6dc6912db67c, type: 3}
   - {fileID: 955421481828560904, guid: 49c4fe4891883514b9a312ef5e70049a, type: 3}
   - {fileID: 8580188828809753470, guid: ca47470fbea4ece4ea3a13f0a1f84560, type: 3}
+  - {fileID: 8348376820701055130, guid: ddbb620479e85c64c8396e9e2632d0cb, type: 3}
 --- !u!4 &704453314
 Transform:
   m_ObjectHideFlags: 0
@@ -775,9 +777,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 532d89c9f3de49f49b4b79c1ba6b42b5, type: 3}
   - {fileID: 21300000, guid: fdfedd273bee0de4381947af945682a8, type: 3}
   - {fileID: 21300000, guid: 08ab0a07198212b4d99b72d14d773a85, type: 3}
+  solidStates:
+  - {fileID: 21300000, guid: 220b36c162bc03343977a07198a0d6be, type: 3}
+  - {fileID: 21300000, guid: 8090504fed4660f44aff98daeb5d2beb, type: 3}
+  - {fileID: 21300000, guid: 1adacb24126f8d144a90c6239f7cde1b, type: 3}
+  - {fileID: 21300000, guid: 3a2b61d091714f146beb0b2b4a9bed5f, type: 3}
+  - {fileID: 21300000, guid: 8764ee7f76b13e14e8000c83cb6cb0e5, type: 3}
   goddFood: {fileID: 8300000, guid: 0c8a111281cadf04ab4eddcd3387d7fc, type: 3}
   badFood: {fileID: 8300000, guid: e6e84557b69b06e419e1fc6bf1ae02cd, type: 3}
   salary: 2
+  solidFoodKey: HelpForSolidFood
+  breakTooth: BreakTooth
 --- !u!50 &1659690013
 Rigidbody2D:
   serializedVersion: 4

@@ -7,6 +7,7 @@ public class BuyInstruction : OpenInstruments
 {
     public Sprite isBuy;
     public Image sprite;
+    public string keyForHelp;
 
     // Start is called before the first frame update
     void Start()
@@ -24,5 +25,13 @@ public class BuyInstruction : OpenInstruments
     {
         if (price == "0")
             sprite.sprite = isBuy;
+    }
+
+    public void HelpInGame()
+    {
+        if (price == "0")
+        {
+            PlayerPrefs.SetInt(keyForHelp, 1);
+        }
     }
 }

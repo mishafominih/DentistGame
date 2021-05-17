@@ -33,6 +33,13 @@ public class Money : MonoBehaviour
         Upd();
     }
 
+    public void AddCount(int d)
+    {
+        var res = count + d;
+        if (res < 0) res = 0;
+        PlayerPrefs.SetInt(key, res);
+    }
+
     public int GetMoney()
     {
         return count;

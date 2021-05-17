@@ -24,7 +24,7 @@ public class OpenInstruments : MonoBehaviour
 
     protected void WritePrice()
     {
-        if (!PlayerPrefs.HasKey(key) || price != "0")
+        if (!PlayerPrefs.HasKey(key))
             PlayerPrefs.SetString(key, price);
     }
 
@@ -34,9 +34,9 @@ public class OpenInstruments : MonoBehaviour
         if(text.text != "")
         {
             var money = GameObject.FindGameObjectWithTag("State").GetComponentInChildren<Money>();
-            if(money.GetMoney() > int.Parse(text.text))
+            if(money.GetMoney() >= int.Parse(text.text))
             {
-                PlayMusic();
+                Music.PlayMusic(music);
                 money.ChangeCount(-int.Parse(text.text));
                 text.text = "";
                 price = "0";
@@ -55,12 +55,6 @@ public class OpenInstruments : MonoBehaviour
             coefficient = coefficient > 6 ? 1 : coefficient;
         }
         PlayerPrefs.SetInt("moneyCoefficient", coefficient);
-    }
-
-    private void PlayMusic()
-    {
-        var audio = GameObject.FindWithTag("AudioEffects").GetComponent<AudioSource>();
-        Music.PlayMusic(music);
     }
 
     private void Update()

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
+    public string tagBadFood;
     public List<GameObject> prefabs;
 
     private List<Vector3> PointsForSpawn = new List<Vector3>();
@@ -30,7 +31,10 @@ public class Spawn : MonoBehaviour
 
                 var indexPrefab = Random.Range(0, prefabs.Count);
                 var prefab = prefabs[indexPrefab];
-
+                if (prefab.tag == "bad" && PlayerPrefs.GetInt(tagBadFood) > 0)
+                {
+                    prefab.GetComponent<SpriteRenderer>().color = Color.gray;
+                }
                 Instantiate(prefab, position, new Quaternion());
             }
             rate.Null();

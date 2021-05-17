@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class AudioMixer : MonoBehaviour
 {
-    public AudioSource Music;
-    public AudioSource Effects;
+    private AudioSource Music;
+    private AudioSource Effects;
 
     void Start()
     {
@@ -15,8 +15,14 @@ public class AudioMixer : MonoBehaviour
         var toggle = GetComponentInChildren<Toggle>();
         Effects = GameObject.FindWithTag("AudioEffects").GetComponent<AudioSource>();
         Music = GameObject.FindWithTag("AudioMusic").GetComponent<AudioSource>();
-        slider.value = PlayerPrefs.GetFloat("MusicVolume");
-        toggle.isOn = PlayerPrefs.GetInt("Effects") == 1;
+        if (PlayerPrefs.HasKey("MusicVolume"))
+            slider.value = PlayerPrefs.GetFloat("MusicVolume");
+        else
+            slider.value = Music.volume;
+        if (PlayerPrefs.HasKey("Effects"))
+            toggle.isOn = PlayerPrefs.GetInt("Effects") == 1;
+        else
+            toggle.isOn = Effects.enabled;
     }
 
     public void ToggleMusic(bool enabled)

@@ -25,6 +25,9 @@ TagManager:
   - Fruit
   - AudioEffects
   - AudioMusic
+  - BadAndGoodFood
+  - SolidFood
+  - solid
   layers:
   - Default
   - TransparentFX

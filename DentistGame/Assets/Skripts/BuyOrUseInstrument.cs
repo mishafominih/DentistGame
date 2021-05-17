@@ -22,7 +22,7 @@ public class BuyOrUseInstrument : MonoBehaviour
                 {
                     money.ChangeCount(-cost);
                     Music.PlayMusic(music);
-                    //PlayerPrefs.SetString(key, price);
+                    PlayerPrefs.SetString(key, cost.ToString());
                     Destroy(transform.GetChild(0).gameObject);
                     OpenInstruments.UpdateCoefficient();
                 }
@@ -37,7 +37,7 @@ public class BuyOrUseInstrument : MonoBehaviour
     private void UpdateCast()
     {
         var price = GetComponentInChildren<Text>().text;
-        if (!PlayerPrefs.HasKey(key) || price != "")
+        if (!PlayerPrefs.HasKey(key))
             PlayerPrefs.SetString(key, price);
     }
 
