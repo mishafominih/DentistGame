@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FlappyBird.unity
     guid: 6968ed1736c292c4681b3e5d95947cae
+  - enabled: 1
+    path: Assets/Scenes/Placement.unity
+    guid: 647cbb37ef322434ba1dca2611809bab
   m_configObjects: {}
