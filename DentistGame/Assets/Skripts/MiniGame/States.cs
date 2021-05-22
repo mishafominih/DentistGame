@@ -12,16 +12,19 @@ public class States : MonoBehaviour
     public int salary;
     public string solidFoodKey;
     public string breakTooth;
+    public string key;
 
     private Money money;
     private int i = 2;
     private SpriteRenderer renderer;
     private bool isBreak = false;
+    private int countFoodEatenRow;
 
-    private const int ucciCoefficient = 70;
+    private const int ucciCoefficient = 50;
 
     void Start()
     {
+        countFoodEatenRow = 0;
         renderer = GetComponent<SpriteRenderer>();
         money = Money.Instance;
         isBreak = PlayerPrefs.GetInt(breakTooth) > 0;
@@ -39,6 +42,10 @@ public class States : MonoBehaviour
             renderer.sprite = states[i];
         }
     }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt(key, countFoodEatenRow);
+    }
 
     public void Upd(string tag)
     {
@@ -46,9 +53,11 @@ public class States : MonoBehaviour
         {
             case "good":
                 Eating(1, salary, goodFood);
+                countFoodEatenRow++;
                 break;
             case "bad":
                 Eating(-1, -salary, badFood);
+                countFoodEatenRow = 0;
                 break;
             case "solid":
                 EatingSolidFood();
