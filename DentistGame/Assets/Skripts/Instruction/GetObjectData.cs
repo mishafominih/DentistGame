@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class GetObjectData : MonoBehaviour
     public GameObject windows;
     public Canvas canvas;
     public string fingTag;
+    public string key;
     private Text text;
 
     // Start is called before the first frame update
@@ -26,6 +28,18 @@ public class GetObjectData : MonoBehaviour
         inf.text = x.text == "" ? information : "Вы не купили этот совет";
         var createWindows = Instantiate(windows, new Vector3(0, 0), new Quaternion());
         createWindows.transform.SetParent(canvas.transform, false);
+        ReadInstruction(x);
+    }
+
+    private void ReadInstruction(Text x)
+    {
+        if (x.text == "")
+        {
+            var countRead = 1;
+            if (PlayerPrefs.HasKey(key))
+                countRead += PlayerPrefs.GetInt(key);
+            PlayerPrefs.SetInt(key, countRead);
+        }
     }
 
     // Update is called once per frame

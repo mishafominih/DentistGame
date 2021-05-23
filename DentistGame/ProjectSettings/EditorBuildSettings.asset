@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Placement.unity
     guid: 647cbb37ef322434ba1dca2611809bab
+  - enabled: 1
+    path: Assets/Scenes/Progress.unity
+    guid: af218103fb8529840a286eda52905546
   m_configObjects: {}

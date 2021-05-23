@@ -783,11 +783,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1adacb24126f8d144a90c6239f7cde1b, type: 3}
   - {fileID: 21300000, guid: 3a2b61d091714f146beb0b2b4a9bed5f, type: 3}
   - {fileID: 21300000, guid: 8764ee7f76b13e14e8000c83cb6cb0e5, type: 3}
-  goddFood: {fileID: 8300000, guid: 0c8a111281cadf04ab4eddcd3387d7fc, type: 3}
+  goodFood: {fileID: 0}
   badFood: {fileID: 8300000, guid: e6e84557b69b06e419e1fc6bf1ae02cd, type: 3}
   salary: 2
   solidFoodKey: HelpForSolidFood
   breakTooth: BreakTooth
+  key: CountFoodEatenRow
 --- !u!50 &1659690013
 Rigidbody2D:
   serializedVersion: 4

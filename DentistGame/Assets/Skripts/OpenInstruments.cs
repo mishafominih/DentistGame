@@ -11,7 +11,6 @@ public class OpenInstruments : MonoBehaviour
     public string price;
     public string key;
     protected Text text;
-    private Image sprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +18,6 @@ public class OpenInstruments : MonoBehaviour
         text = GetComponentInChildren<Text>();
         price = PlayerPrefs.GetString(key);
         text.text = price;
-        sprite = transform.parent.GetComponent<Image>();
     }
 
     protected void WritePrice()

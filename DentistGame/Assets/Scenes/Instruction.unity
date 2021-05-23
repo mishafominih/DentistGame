@@ -443,6 +443,11 @@ PrefabInstance:
         \u0444\u0443\u0440\u043A\u0442\u044B, \u043E\u0432\u043E\u0449\u0438. \u0412\u0440\u0435\u0434\u043D\u0430\u044F
         \u043F\u0438\u0449\u0430: \u0447\u0438\u043F\u0441\u044B, \u043A\u043E\u043B\u0430"
       objectReference: {fileID: 0}
+    - target: {fileID: 6428744255109531739, guid: 8da0cb76148c1b245bee8d8f9a6b984b,
+        type: 3}
+      propertyPath: key
+      value: CountRead
+      objectReference: {fileID: 0}
     - target: {fileID: 6428744255393287777, guid: 8da0cb76148c1b245bee8d8f9a6b984b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -672,6 +677,11 @@ PrefabInstance:
         \u0442\u0432\u0435\u0440\u0434\u0430\u044F \u043F\u0438\u0449\u0430 \u043C\u043E\u0433\u0443\u0442
         \u043F\u043E\u0432\u0440\u0435\u0434\u0438\u0442\u044C \u0432\u0430\u0448\u0438\u043C
         \u0437\u0443\u0431\u0430\u043C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428744255109531739, guid: 8da0cb76148c1b245bee8d8f9a6b984b,
+        type: 3}
+      propertyPath: key
+      value: CountRead
       objectReference: {fileID: 0}
     - target: {fileID: 6428744255393287777, guid: 8da0cb76148c1b245bee8d8f9a6b984b,
         type: 3}
@@ -1441,6 +1451,7 @@ MonoBehaviour:
   windows: {fileID: 2166908785321214358, guid: faef47e0debd4954ba912230639e8acb, type: 3}
   canvas: {fileID: 1978747675}
   fingTag: BuyInstrBrach
+  key: CountRead
 --- !u!114 &776880429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,6 +2044,7 @@ MonoBehaviour:
   windows: {fileID: 2166908785321214358, guid: faef47e0debd4954ba912230639e8acb, type: 3}
   canvas: {fileID: 1978747675}
   fingTag: BuyInstrTooth
+  key: CountRead
 --- !u!114 &1170330650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2639,6 +2651,7 @@ MonoBehaviour:
   windows: {fileID: 2166908785321214358, guid: faef47e0debd4954ba912230639e8acb, type: 3}
   canvas: {fileID: 1978747675}
   fingTag: BuyInstrFloss
+  key: CountRead
 --- !u!114 &1941389746
 MonoBehaviour:
   m_ObjectHideFlags: 0
