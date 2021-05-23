@@ -45,7 +45,7 @@ public class TouthManager : MonoBehaviour
         var greenTouth = tooths
             .Where(x => x.GetComponent<SpriteRenderer>().color == Color.green)
             .ToList();
-        if(greenTouth.Count == 2)
+        if (greenTouth.Count == 2)
         {
             swapPosition(greenTouth[0], greenTouth[1]);
             greenTouth.ForEach(x =>
@@ -53,12 +53,12 @@ public class TouthManager : MonoBehaviour
                 x.GetComponent<SpriteRenderer>().color = Color.white;
             });
         }
-        for(int i = 0; i < tooths.Count; i++)
+        for (int i = 0; i < tooths.Count; i++)
         {
             var toothPos = tooths[i].transform.position;
             var startPos = startPositions[i];
             if (Mathf.Abs(Mathf.Abs(startPos.x) - Mathf.Abs(toothPos.x)) > 0.1 ||
-                Mathf.Abs(Mathf.Abs(startPos.y) - Mathf.Abs(toothPos.y)) > 0.1) 
+                Mathf.Abs(Mathf.Abs(startPos.y) - Mathf.Abs(toothPos.y)) > 0.1)
                 return;
         }
         PlayerPrefs.SetInt(SAVE_CHANCE, StartChance - 10 > 0 ? StartChance - 10 : 5);
@@ -70,11 +70,11 @@ public class TouthManager : MonoBehaviour
         var savePos = second.transform.position;
         second.transform.position = first.transform.position;
         first.transform.position = savePos;
-    }
-
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt(SAVE_CHANCE, 100);
+        var firstRenderer = first.GetComponent<SpriteRenderer>();
+        var secondRenderer = second.GetComponent<SpriteRenderer>();
+        var order = secondRenderer.sortingOrder;
+        secondRenderer.sortingOrder = firstRenderer.sortingOrder;
+        firstRenderer.sortingOrder = order;
     }
 
 }
