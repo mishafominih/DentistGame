@@ -1188,8 +1188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -239, y: 686.82086}
-  m_SizeDelta: {x: 115.3635, y: 115.363495}
+  m_AnchoredPosition: {x: -240, y: 678.7}
+  m_SizeDelta: {x: 133.09332, y: 131.60327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &494837928
 MonoBehaviour:
@@ -1278,7 +1278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: db681f0f93568af4bbc113b5691b3c89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cc8be3d4083eb44a8441bf375357632, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1791,9 +1791,9 @@ MonoBehaviour:
   tooth: {fileID: 1432055967}
   advices:
   - "\u041F\u043E\u0447\u0438\u0441\u0442\u044C \u0437\u0443\u0431\u044B \u0449\u0435\u0442\u043A\u043E\u0439"
+  - "\u041F\u043E\u0447\u0438\u0441\u0442\u044C \u0437\u0443\u0431\u044B \u043D\u0438\u0442\u044C\u044E"
   - "\u041F\u043E\u0447\u0438\u0441\u0442\u044C \u0437\u0443\u0431\u044B \u0449\u0435\u0442\u043A\u043E\u0439
     \u0441 \u043F\u0430\u0441\u0442\u043E\u0439"
-  - "\u041F\u043E\u0447\u0438\u0441\u0442\u044C \u0437\u0443\u0431\u044B \u043D\u0438\u0442\u044C\u044E"
 --- !u!1 &819378140
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,10 +2810,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0

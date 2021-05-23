@@ -12,6 +12,9 @@ public class Advice : MonoBehaviour
     private Text text;
     private SpriteRenderer renderer;
     private int index;
+    private bool isClearDirts = false;
+    private bool isClearHardDirts = false;
+    private bool isClearSmell = false;
     private GameObject[] dirts;
     private GameObject[] hardDirts;
     private GameObject[] smell;
@@ -30,12 +33,21 @@ public class Advice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (NextAdvice(dirts))
-        //    index = 1;
-        //else if (NextAdvice(hardDirts))
-        //    index = 2;
-        
-        //text.text = advices[index];
+        isClearDirts = NextAdvice(dirts);
+        isClearHardDirts = NextAdvice(hardDirts);
+        isClearSmell = NextAdvice(smell);
+        if (isClearSmell && isClearHardDirts && isClearDirts)
+            this.gameObject.active = false;
+        GetNext();
+        text.text = advices[index];
+    }
+
+    private void GetNext()
+    {
+        if (isClearDirts)
+            index = isClearHardDirts ? 2 : 1;
+        else
+            index = 0;
     }
 
     private bool NextAdvice(GameObject[] dirts)
